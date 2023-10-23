@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body >
+    <div class="container">
+        <h1><em style="font-size: 40px; font-weight: 40px; color: #ff8a05;"> TO DO APP </em></h1>
+        <div class="input">
+            <input type="text" name="" id="input" placeholder=" ENTER YOUR TASK ">
+            <button id="add" onclick="addbutton()"> ADD </button>
+        <button  style="width: 85px;" onclick="deleteall()" > DELETEALL</button>
+
+        </div>
+        <!-- for ul   -->
+        <div class="list" id="addli" >
+           
+        
+            
+
+
+            
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <!-- css here -->
+    <style>
+        body{
+    background-image:  url('BACKGROUND.jpg'); 
+      background-size: cover; 
+      background-repeat: no-repeat;
+      height: 100vh;
+}
+.container{
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    margin:0 auto ;
+    margin-top: 25px;
+    
+    background-color: #fdfdfd;
+}
+input{
+    width: 270px;
+    padding: 8px;
+    border: 2px solid hsl(180, 79%, 54%);
+    outline: none;
+}
+ button{
+    width: 60px;
+    height: 41px;
+    background-color: hsl(0, 0%, 0%);
+    color: #d1d1d1;
+    outline: none;
+    border-radius: 20px;
+    
+}
+.list ul{
+    position: relative;
+    background-color: black;
+    color: hsl(138, 53%, 55%);
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+
+}
+.btn{
+    position: relative;
+    left: 40%;
+    cursor: pointer;
+    padding: 3px 3px 3px 3px;
+    border-radius: 45px RED;
+    background-color: #000000;
+    
+    margin: 5px;
+    
+}
+ button:hover{
+    background-color: hsl(202, 86%, 67%);
+    color: green;
+ }
+button:active{
+    background-color: red;
+}
+
+    </style>
+    
+<!-- javascript here -->
+    <script src="page.js">
+        var list = document.getElementById("addli");
+var input = document.getElementById("input");
+
+function addbutton(){
+    var abc = document.getElementById("input");
+    if (abc.value == ""){
+        alert("ENTER THE TASK FIRST ");
+    }
+    else{
+    
+
+        var li = document.createElement("ul");
+        var litext = document.createTextNode(abc.value);
+        li.appendChild(litext)
+        list.appendChild(li)
+
+       // delete btn here
+      var deletebtn = document.createElement("button")
+      var  deletetext = document.createTextNode("DELETE");
+        deletebtn.appendChild(deletetext);
+        deletebtn.setAttribute("class","btn")
+        deletebtn.setAttribute("onclick","deletebtn(this)")
+
+        // edit button here
+        var editbtn = document.createElement("button");
+        var edittext = document.createTextNode("EDIT");
+        editbtn.appendChild(edittext);
+        editbtn.setAttribute("class","btn")
+        editbtn.setAttribute("onclick","editbtn(this)") 
+
+
+        li.appendChild(deletebtn)
+        li.appendChild(editbtn)
+        console.log(list);
+    
+        
+
+       
+        abc.value="";
+    
+
+    }     
+    
+}
+
+function deletebtn(abc){
+    abc.parentNode.remove()
+}
+function editbtn(well){
+    var edit = prompt("ENTER THE EDIT VALUE ", well.parentNode.firstChild.nodeValue)
+    
+    well.parentNode.firstChild.nodeValue = edit
+    if ( edit == ""){
+        alert("ENTER THE TASK FIRST ");
+    }
+    
+}
+
+
+function deleteall(){
+      list.innerHTML=""
+}
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

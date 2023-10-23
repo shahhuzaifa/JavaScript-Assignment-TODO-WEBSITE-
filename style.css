@@ -1,0 +1,57 @@
+body{
+    background-image:  url('BACKGROUND.jpg'); 
+      background-size: cover; 
+      background-repeat: no-repeat;
+      height: 100vh;
+}
+.container{
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    margin:0 auto ;
+    margin-top: 25px;
+    
+    background-color: #fdfdfd;
+}
+input{
+    width: 270px;
+    padding: 8px;
+    border: 2px solid hsl(180, 79%, 54%);
+    outline: none;
+}
+ button{
+    width: 60px;
+    height: 41px;
+    background-color: hsl(0, 0%, 0%);
+    color: #d1d1d1;
+    outline: none;
+    border-radius: 20px;
+    
+}
+.list ul{
+    position: relative;
+    background-color: black;
+    color: hsl(138, 53%, 55%);
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+
+}
+.btn{
+    position: relative;
+    left: 40%;
+    cursor: pointer;
+    padding: 3px 3px 3px 3px;
+    border-radius: 45px RED;
+    background-color: #000000;
+    
+    margin: 5px;
+    
+}
+ button:hover{
+    background-color: hsl(202, 86%, 67%);
+    color: green;
+ }
+button:active{
+    background-color: red;
+}
